@@ -1,0 +1,22 @@
+<%= form_with model: blog_post do |form|  %>
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+    <% if form.object.errors.has_key?(:title) %>
+      <div class="error">
+        <%= form.object.errors[:title].first %>
+      </div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+    <% if form.object.errors.has_key?(:body) %>
+      <div class="error">
+        <%= form.object.errors[:body].first %>
+      </div>
+    <% end %>
+  </div>
+  <%= form.button %>
+<% end %>
